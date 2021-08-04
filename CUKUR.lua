@@ -9558,6 +9558,16 @@ end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 end
+if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
+data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
+if res == 200 then
+audios = json:decode(data)
+if audios.Info == true then
+local Text ='*☆:↫تم اختيار المقطع الصوتي لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'CUKUR.',url="t.me/GXKXG"}},
+}
 ---------
 if text and text:match("^كشف @(.*)$") then
 local username = text:match("^كشف @(.*)$")

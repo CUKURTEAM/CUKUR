@@ -3526,13 +3526,8 @@ end
 return false
 end
 function start_function(extra, result, success)
-if result.sender_user_id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫حبي وخر لاضل تفيك هذا مطور البوت مينحضر \n")
-return false 
-end
-function start_function(extra, result, success)
-if result.sender_user_id_ == tonumber(1566031059) then
-send(msg.chat_id_, msg.id_, "☆:↫ها ضلعي خير متكدر تحظر خبل انت .؟ \n")
+if result.sender_user_id_ == tonumber(SUDO,1566031059) then
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك حظر المطور الاساسي او مطور السورس \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -3573,7 +3568,7 @@ send(msg.chat_id_, msg.id_, "☆:↫لا تسطيع حظر البوت عام")
 return false 
 end
 if result.id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫حبي وخر لاضل تفيك هذا مطور البوت مينحضر \n")
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك حظر المطور الاساسي او مطور السورس \n")
 return false 
 end
 usertext = '\n☆:↫العضو » ['..result.title_..'](t.me/'..(username or 'CUKUR_SO')..')'
@@ -3599,8 +3594,8 @@ send(msg.chat_id_, msg.id_,'☆:↫لا تستطيع استخدام البوت \
 end
 return false
 end
-if userid == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك حظر المطور الاساسي \n")
+if userid == tonumber(SUDO,1566031059) then
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك حظر المطور الاساسي او مطور السورس \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
@@ -3631,8 +3626,8 @@ end
 return false
 end
 function start_function(extra, result, success)
-if result.sender_user_id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي \n")
+if result.sender_user_id_ == tonumber(SUDO,1566031059) then
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي او مطور السورس \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -3672,12 +3667,7 @@ send(msg.chat_id_, msg.id_, "☆:↫لا تسطيع كتم البوت عام")
 return false 
 end
 if result.id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي \n")
-return false 
-end
-function start_function(extra, result, success)
-if result.sender_user_id_ == tonumber(1566031059) then
-send(msg.chat_id_, msg.id_, "☆:↫سرسح لا خلي رجلي بيك .؟ \n")
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي او مطور السورس \n")
 return false 
 end
 usertext = '\n☆:↫العضو » ['..result.title_..'](t.me/'..(username or 'CUKUR_SO')..')'
@@ -3703,8 +3693,8 @@ send(msg.chat_id_, msg.id_,'☆:↫لا تستطيع استخدام البوت \
 end
 return false
 end
-if userid == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي \n")
+if userid == tonumber(SUDO,1566031059) then
+send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي او مطور السورس \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
@@ -11366,7 +11356,7 @@ database:set(bot_id.."Games:Bat"..msg.chat_id_,Num)
 TEST = [[
 *➀       ➁     ➂      ➃      ➄     ➅
 ↓      ↓     ↓      ↓     ↓     ↓   
-👊 ‹•› 👊 ‹•› 👊 ‹•› ?? ‹•› 👊 ‹•› 👊
+👊 ‹•› 👊 ‹•› 👊 ‹•› 👊 ‹•› 👊 ‹•› 👊
 ☆:↫اختر لأستخراج المحيبس الايد التي تحمل المحيبس 
 ☆:↫الفائز يحصل على { 3 } من النقاط *
 ]]

@@ -3525,10 +3525,6 @@ send(msg.chat_id_, msg.id_,'☆:↫لا تستطيع استخدام البوت \
 end
 return false
 end
-if CUKURSudoBot(result.id_) then
-send(msg.chat_id_, msg.id_,"*☆:↫لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
-return false 
-end
 function start_function(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك حظر المطور الاساسي \n")
@@ -3632,10 +3628,6 @@ end
 function start_function(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, "☆:↫لا يمكنك كتم المطور الاساسي \n")
-return false 
-end
-if CUKURSudoBot(result.id_) then
-send(msg.chat_id_, msg.id_,"*☆:↫لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  

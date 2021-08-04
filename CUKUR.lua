@@ -136,7 +136,13 @@ return config
 end 
 _redis = load_redis()  
 --------------------------------------------------------------------------------------------------------------
-print([[
+print([[. 
+____ _   _ _  ___   _ ____  
+ / ___| | | | |/ / | | |  _ \ 
+| |   | | | | ' /| | | | |_) |
+| |___| |_| | . \| |_| |  _ < 
+ \____|\___/|_|\_\\___/|_| \_\
+
 ‌> CH › @Cukur_So
 > CH › @GXKXG
 ~> DEVELOPER › @S_X_X_G
@@ -2595,22 +2601,14 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
-Text = [[
-ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-☆:↫↬『𝘸𝘦𝘭𝘤𝘰𝘮𝘦 T𝘰 𝘤𝘶𝘬𝘶𝘳 𝘴𝘰𝘶𝘳𝘤𝘦 』
-ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-☆:↫↬[Channel CUKUR](t.me/Cukur_So) 
-ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-☆:↫↬[Information](t.me/GXKXG)
-ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-☆:↫↬[DEVELOPER](t.me/S_X_X_G)
-ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-☆:↫↬[To talk to us](t.me/S_X_X_G)
- ᑅ══•═══ᑅ CUKUR ᑀ══•═══ᑀ
-]]
-send(msg.chat_id_, msg.id_,Text)
-return false
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+Text = "CUKUR\n\n[☆ Ch - CUKUR ](http://t.me/GXKXG)\n\n[☆  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/CUKUR_SO)\n\n[☆  CUKUR ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/S_X_X_G)\n\n[☆  DEV](http://t.me/S_X_X_G)"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '☆ CUKUR',url="t.me/CUKUR_SO/84"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CUKUR_SO&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then

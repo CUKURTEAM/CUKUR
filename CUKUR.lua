@@ -11742,7 +11742,7 @@ end
 
 if text == "تحبني" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting ={"لا"🙂,"شتحس.😒","وفف اموت عليك بيب🥺❤️🍼"}
+local texting ={"لا"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end

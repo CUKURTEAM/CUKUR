@@ -21,7 +21,7 @@ file:write(serialized)
 file:close()  
 end  
 if not database:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\naᑅ══•═══ᑅ ÇUKUR ᑀ══•═══ᑀ\n\27')
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\nᑅ══•═══ᑅ ÇUKUR ᑀ══•═══ᑀ\n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
@@ -137,6 +137,11 @@ end
 _redis = load_redis()  
 --------------------------------------------------------------------------------------------------------------
 print([[
+____ _   _ _  ___   _ ____  
+ / ___| | | | |/ / | | |  _ \ 
+| |   | | | | ' /| | | | |_) |
+| |___| |_| | . \| |_| |  _ < 
+ \____|\___/|_|\_\\___/|_| \_\
 
 > CH › @CXRCX
 > CH › @CXRCX
@@ -147,16 +152,16 @@ SUDO = tonumber(sudos.SUDO)
 sudo_users = {SUDO}
 bot_id = sudos.token:match("(%d+)")  
 token = sudos.token 
---- start functions ↓
+---الملفات 
 --------------------------------------------------------------------------------------------------------------
-io.popen("mkdir File_Boy") 
-io.popen("cd File_Boy && rm -rf commands.lua.1") 
-io.popen("cd File_Boy && rm -rf commands.lua.2") 
-io.popen("cd File_Boy && rm -rf commands.lua.3") 
-io.popen("cd File_Boy && wget https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Boy/commands.lua") 
+io.popen("mkdir File_Bot") 
+io.popen("cd File_Bot && rm -rf commands.lua.1") 
+io.popen("cd File_Bot && rm -rf commands.lua.2") 
+io.popen("cd File_Bot && rm -rf commands.lua.3") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
-for v in io.popen('ls File_Boy'):lines() do
+for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 i = i + 1
 t = t.."\27[39m"..i.."\27[36m".." - \27[10;32m"..v..",\27[m \n"
@@ -571,7 +576,7 @@ Send(chat,msg.id_,'\n- الرتبة : مشرف  '..'\n- والصلاحيات ه�
 end
 end
 end
-function GetFile_Boy(msg)
+function GetFile_Bot(msg)
 local list = database:smembers(bot_id..'Chek:Groups') 
 local t = '{"BOT_ID": '..bot_id..',"GP_BOT":{'  
 for k,v in pairs(list) do   
@@ -678,7 +683,7 @@ download_to_file('https://api.telegram.org/file/bot'..token..'/'..Qw.result.file
 sendSticker(msg.chat_id_, msg.id_, 0, 1, nil, './'..rre)
 os.execute('rm -rf ./'..rre) 
 end
-function AddFile_Boy(msg,chat,ID_FILE,File_Name)
+function AddFile_Bot(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if tonumber(File_Name:match('(%d+)')) ~= tonumber(bot_id) then 
 send(chat,msg.id_,"☆:   ملف نسخه ليس لهاذا البوت")
@@ -794,9 +799,9 @@ end
 end,nil)   
 end  
 function plugin_CUKUR(msg)
-for v in io.popen('ls File_Boy'):lines() do
+for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
-plugin = dofile("File_Boy/"..v)
+plugin = dofile("File_Bot/"..v)
 if plugin.CUKUR and msg then
 pre_msg = plugin.CUKUR(msg)
 end
@@ -1172,7 +1177,7 @@ send(msg.chat_id_, msg.id_,"☆:  ارسل لي التوجيه الان")
 return false
 end 
 if text == 'جلب نسخه الاحتياطيه♧' and DevCUKUR(msg) then 
-GetFile_Boy(msg)
+GetFile_Bot(msg)
 end
 if text == "تنظيف المشتركين♧" and DevCUKUR(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
@@ -2624,7 +2629,7 @@ function by_reply(extra, result, success)
 if result.content_.document_ then 
 local ID_FILE = result.content_.document_.document_.persistent_id_ 
 local File_Name = result.content_.document_.file_name_
-AddFile_Boy(msg,msg.chat_id_,ID_FILE,File_Name)
+AddFile_Bot(msg,msg.chat_id_,ID_FILE,File_Name)
 end   
 end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
@@ -2640,7 +2645,7 @@ send(msg.chat_id_, msg.id_,'☆:  لا تستطيع استخدام البوت \n
 end
 return false
 end
-GetFile_Boy(msg)
+GetFile_Bot(msg)
 end
 if text == 'الاوامر المضافه' and Constructor(msg) then
 local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
@@ -3815,7 +3820,7 @@ end
 if text == 'الملفات' and DevCUKUR(msg) then
 t = '☆:  ملفات السورس الحفره ↓\n ٴᑅ══•═══ᑅ ÇUKUR ᑀ══•═══ᑀ\n'
 i = 0
-for v in io.popen('ls File_Boy'):lines() do
+for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 i = i + 1
 t = t..i..'- الملف » {'..v..'}\n'
@@ -3834,7 +3839,7 @@ local TextS = "\n☆:  اهلا بك في متجر ملفات الحفره \n☆
 local TextE = "\nᑅ══•═══ᑅ ÇUKUR ᑀ══•═══ᑀ\n☆:  علامة تعني { ✔️ } ملف مفعل\n☆:  علامة تعني { ✖ } ملف معطل\n☆:  قناة سورس الحفره ↓\n".."☆:  [اضغط هنا لدخول](t.me/CXRCX) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
-local Check_File_is_Found = io.open("File_Boy/"..name,"r")
+local Check_File_is_Found = io.open("File_Bot/"..name,"r")
 if Check_File_is_Found then
 io.close(Check_File_is_Found)
 CeckFile = "(✔️)"
@@ -3856,16 +3861,16 @@ end
 if text and text:match("^(تعطيل) (.*)(.lua)$") and DevCUKUR(msg) then
 local name_t = {string.match(text, "^(تعطيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
-local File_Boy = io.open("File_Boy/"..file,"r")
-if File_Boy then
-io.close(File_Boy)
+local file_bot = io.open("File_Bot/"..file,"r")
+if file_bot then
+io.close(file_bot)
 t = "☆:  الملف » "..file.."\n☆:  تم تعطيل ملف \n"
 else
 t = "☆:  بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Boy/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Bot/"..file)
 if res == 200 then
-os.execute("rm -fr File_Boy/"..file)
+os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('CUKUR.lua')  
 else
@@ -3876,16 +3881,16 @@ end
 if text and text:match("^(تفعيل) (.*)(.lua)$") and DevCUKUR(msg) then
 local name_t = {string.match(text, "^(تفعيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
-local File_Boy = io.open("File_Boy/"..file,"r")
-if File_Boy then
-io.close(File_Boy)
+local file_bot = io.open("File_Bot/"..file,"r")
+if file_bot then
+io.close(file_bot)
 t = "☆:  بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = "☆:  الملف » "..file.."\n☆:  تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Boy/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/CUKURTEAM/Files_CUKUR/main/File_Bot/"..file)
 if res == 200 then
-local chek = io.open("File_Boy/"..file,'w+')
+local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
@@ -3896,7 +3901,7 @@ end
 return false
 end
 if text == "مسح الملفات" and DevCUKUR(msg) then
-os.execute("rm -fr File_Boy/*")
+os.execute("rm -fr File_Bot/*")
 send(msg.chat_id_,msg.id_,"☆:  تم مسح الملفات")
 return false
 end

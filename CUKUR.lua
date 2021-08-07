@@ -9920,7 +9920,6 @@ end,nil)
 end,nil)
 end
 end
- ..
 
 if text == "الساعه" then
 local ramsesj20 = "\n الساعه الان : "..os.date("%I:%M%p")

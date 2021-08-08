@@ -2675,7 +2675,7 @@ end,nil)
 end
 if text == 'السورس' or text == '' or text == 'يا سورس' then
 Text = [[
-☆ ↬⦑ Welcome to Source ⦒
+☆ ↬Welcome to Source 
 ==================
 ☆ ↬⦑ SOURCE CUKUR ⦒ 
 ==================
@@ -2683,9 +2683,9 @@ Text = [[
 ==================
 ☆ ↬︙ [Source Update](http://t.me/CUKUR_SO)      
 ==================
-☆ ↬︙ [Source developer](http://t.me/D9l9l)    
+☆ ↬︙ [Source developer](http://t.me/X444F)    
 ===================
-☆ ↬︙ [CUKUR programmer](http://t.me/D9l9l)
+☆ ↬︙ [CUKUR Source Developer](http://t.me/S_X_X_G)
 ===================
 ]]
 send(msg.chat_id_, msg.id_,Text)

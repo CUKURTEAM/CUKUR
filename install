@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd $HOME/CUKUR
+cd $HOME/ALOSH
 install() {
 rm -rf $HOME/.telegram-cli
 sudo apt-get update -y
@@ -19,9 +19,9 @@ sudo apt-get install libstdc++6 -y
 sudo apt-get install lua-lgi -y
 sudo apt-get install libnotify-dev -y
 sudo chmod +x tg
-lua CUKUR.lua
-sudo chmod +x CUKUR
-sudo chmod +x ./CK
+lua ALOSH.lua
+sudo chmod +x ALOSH
+sudo chmod +x ./AL
 ./CK
 }
 if [ "$1" = "install" ]; then
@@ -32,8 +32,8 @@ echo "Tg Is Not Found"
 exit 1
 fi
 sudo chmod +x tg
-lua CUKUR.lua
-sudo chmod +x CUKUR
-sudo chmod +x ./CK
-./CK
+lua ALOSH.lua
+sudo chmod +x ALOSH
+sudo chmod +x ./AL
+./AL
 fi

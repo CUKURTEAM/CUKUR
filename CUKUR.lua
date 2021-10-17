@@ -10429,7 +10429,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'الحفره')
-send(msg.chat_id_, msg.id_'اسمي ,['..Namebot..'] ')
+send(msg.chat_id_, msg.id_,'اسمي ,['..Namebot..'] ')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 

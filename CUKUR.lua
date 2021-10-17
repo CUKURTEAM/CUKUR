@@ -139,7 +139,7 @@ _redis = load_redis()
 print([[
 
 > CH › @CUKUR_SO
-~> DEVELOPER › @S_X_X_C
+~> DEVELOPER › @X444F 
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
@@ -10429,7 +10429,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'الحفره')
-send(msg.chat_id_, msg.id_,'اسمي الكيوت,['..Namebot..'] ')
+send(msg.chat_id_, msg.id_,'اسمي ,['..Namebot..'] ')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 

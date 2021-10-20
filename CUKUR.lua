@@ -11754,6 +11754,22 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 end
 end
 end
+$ARMOF = json_decode(file_get_contents("$chat_id.json"),1);
+if($update and !$ARMOF[$from_id]){
+$ARMOF[$from_id] = $update->message->from->first_name.$update->message->from->last_name;
+file_put_contents("$chat_id.json",json_encode($ARMOF,128|34|256));
+}
+$ni = $update->message->from->first_name.$update->message->from->last_name;
+if($ni != $ARMOF[$from_id]){
+bot('sendmessage',[
+'chat_id'=>$chat_id,
+'text'=>"شكو غيرت اسمك مو جان ".$ARMOF[$from_id],
+'reply_to_message_id'=>$update->message->message_id,
+]);
+$ARMOF[$from_id] = $update->message->from->first_name.$update->message->from->last_name;
+file_put_contents("$chat_id.json",json_encode($ARMOF,128|34|256));
+}
+
 if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" or text == "شنو رئيج بهذ" or text == "شنو رئيج بهذا" or text == "شنو رايك بهذا" or text == "شنو رايك بهذ" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = {"ادب سسز يباوع علي بنات 😂🥺"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
